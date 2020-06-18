@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Crud Estoque</title>
+</head>
+<body>
+<div align="Center">
+    <h1>Estoque De equipamentos Eletronico</h1>
+    <a href="new">Cadastrar Produto no estoque</a>
+    <br/></br>
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Id produto</th>
+                <th>Nome</th>
+                <th>Marca</th>
+                <th>Nascionalidade</th>
+                <th>Preço</th>
+                <th>ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="produto : ${listProduto}">
+                <td th:text="${produto.id}">Produto ID</td>
+                <td th:text="${produto.nome}">Nome</td>
+                <td th:text="${produto.marca}">Marca</td>
+                <td th:text="${produto.nacionalidade}">Nacionalidade</td>
+                <td th:text="${produto.preco}">Preço</td>
+                <td>
+                    <a th:href="@{'/edit/' + ${produto.id}}">Editar</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a th:href="@{'/delete/' + ${produto.id}}">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

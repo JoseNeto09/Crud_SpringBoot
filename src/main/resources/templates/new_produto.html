@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro</title>
+</head>
+<body>
+<div align="center">
+    <h1>Cadastro de Produtos</h1>
+    <br>
+    <form action="#" th:action="@{/save}" th:object="${Produto}" method="post">
+        <table border="0" cellpadding="10">
+            <tr>
+                <td> Nome:</td>
+                <td><input type="text" th:field="*{nome}"/></td>
+            </tr>
+            <tr>
+                <td> Marca:</td>
+                <td><input type="text" th:field="*{marca}"/></td>
+            </tr>
+            <tr>
+                <td> Nacionalidade:</td>
+                <td><input type="text" th:field="*{nacionalidade}"/></td>
+            </tr>
+            <tr>
+                <td> Preço:</td>
+                <td><input type="text" th:field="*{preco}"/></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type=submit>Finalizar Cadastro</button></td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>
